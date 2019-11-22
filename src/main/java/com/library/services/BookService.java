@@ -2,6 +2,7 @@ package com.library.services;
 
 import com.library.DAO.BookDAO;
 import com.library.entity.Book;
+import com.library.entity.BookUpdatePayload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Collection;
@@ -28,5 +29,9 @@ public class BookService {
 
     public Optional<Book> deleteBookById(int id) {
         return bookDAO.deleteBookById(id);
+    }
+
+    public Optional<Book> updateBookById(int id, BookUpdatePayload bookUpdatePayload) {
+        return  bookDAO.updateBookById(id, bookUpdatePayload);
     }
 }

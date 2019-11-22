@@ -1,6 +1,7 @@
 package com.library.controller;
 
 import com.library.entity.Book;
+import com.library.entity.BookUpdatePayload;
 import com.library.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,11 @@ public class BookController {
     @DeleteMapping(value = "/{id}")
     public Optional<Book> deleteBookById(@PathVariable("id") int id) {
         return bookService.deleteBookById(id);
+    }
+
+    @PutMapping(value = "/{id}")
+    public Optional<Book> updateBookById(@PathVariable("id") int id, @RequestBody BookUpdatePayload bookUpdatePayload) {
+        return bookService.updateBookById(id, bookUpdatePayload);
     }
 
  }
