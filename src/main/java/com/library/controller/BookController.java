@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/books")
+@RequestMapping("/")
 public class BookController {
 
     @Autowired
@@ -21,7 +21,7 @@ public class BookController {
         return bookService.getBooks();
     }
 
-    @PostMapping
+    @PostMapping("/addBook")
     public Book postBook(@RequestBody Book book) {
 
         return bookService.createBook(book);
@@ -32,12 +32,12 @@ public class BookController {
         return bookService.getBooksById(id);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/deleteBook/{id}")
     public Optional<Book> deleteBookById(@PathVariable("id") int id) {
         return bookService.deleteBookById(id);
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/updateBook/{id}")
     public Optional<Book> updateBookById(@PathVariable("id") int id, @RequestBody BookUpdatePayload bookUpdatePayload) {
         return bookService.updateBookById(id, bookUpdatePayload);
     }
