@@ -5,6 +5,7 @@ import com.library.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class BookService {
@@ -19,5 +20,13 @@ public class BookService {
 
     public Book createBook(Book book) {
         return bookDAO.createBook(book);
+    }
+
+    public Optional<Book> getBooksById(int id) {
+        return bookDAO.getBookById(id);
+    }
+
+    public Optional<Book> deleteBookById(int id) {
+        return bookDAO.deleteBookById(id);
     }
 }
