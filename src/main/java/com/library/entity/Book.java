@@ -11,7 +11,7 @@ public class Book {
     private String title;
     private String author;
     private int year;
-    private long ISBN;
+    private String isbn;
 
 
     public void setId(Integer id) {
@@ -42,11 +42,11 @@ public class Book {
         this.year = year;
     }
 
-    public long getISBN() {
-        return ISBN;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setISBN(long ISBN) {
-        this.ISBN = ISBN;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }
